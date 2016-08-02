@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[virtualenv的使用]]></title>
+      <url>http://yoursite.com/2016/08/02/virtualenv%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>####我个人使用的目的：便于不同版本python开发</p>
+<p>#####安装:  </p>
+<pre><code>$ sudo apt-get install python-virtualenv
+</code></pre><p>#####建存放目录：</p>
+<pre><code>$ mkdir testvirtual
+</code></pre><p>#####创建虚拟环境（python3下的）：</p>
+<pre><code>$ virtualenv -p python3 env1
+</code></pre><p>#####启动虚拟环境：</p>
+<pre><code>$ cd env1
+$ source ./bin/activate
+</code></pre><p>#####退出虚拟环境：</p>
+<pre><code>$ deactivate
+</code></pre><p>#####可以直接在虚拟环境运行pip等</p>
+<pre><code>$ pip install xxx
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git整理]]></title>
+      <url>http://yoursite.com/2016/08/01/Git%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><p><strong>一、创建库</strong></p>
+<pre><code>git init &lt;库名&gt;
+</code></pre><p><strong>二、创建分支</strong> (打开刚创建的库: cd &lt;库名&gt;)</p>
+<pre><code>git branch &lt;分支名&gt;
+</code></pre><p>注：如果创建分支失败，建立一个测试文本文件即可。</p>
+<pre><code>1. git add .
+2. git commit -a -m &quot;test&quot;
+</code></pre><p><strong>三、切换分支</strong></p>
+<pre><code>git checkout &lt;分支名&gt; 
+</code></pre><p>该语句和上一个语句可以和起来用一个语句表示：</p>
+<pre><code>git checkout -b &lt;分支名&gt;
+</code></pre><p><strong>四、查看当前库所有分支</strong></p>
+<pre><code>git branch
+</code></pre><p><strong>五、分支合并</strong></p>
+<p>比如，如果要将当前的分支develop，合并到主分支master<br>首先我们需要切换到master主分支：</p>
+<pre><code>git checkout master
+</code></pre><p>然后执行合并操作：</p>
+<pre><code>git merge develop
+</code></pre><p>如果有冲突，会提示你，调用<code>git status</code>查看冲突文件。 </p>
+<p>解决冲突，然后调用<code>git add</code>或<code>git rm</code>将解决后的文件暂存。 </p>
+<p>所有冲突解决后，<code>git commit</code> 提交更改。</p>
+<p><strong>六、分支衍合</strong></p>
+<p>分支衍合和分支合并的差别在于，分支衍合不会保留合并的日志，不留痕迹，而 分支合并则会保留合并的日志。 </p>
+<p>要将开发中的分支develop，衍合到主分支master<br>首先切换的master分支：</p>
+<pre><code>git checkout master
+</code></pre><p>然后执行衍和操作：</p>
+<pre><code>git rebase develop
+</code></pre><p>如果有冲突，会提示你，调用<code>git status</code>查看冲突文件。 </p>
+<p>解决冲突，然后调用<code>git add</code>或<code>git rm</code>将解决后的文件暂存。<br>所有冲突解决后，</p>
+<pre><code>git rebase –continue 
+</code></pre><p>提交更改。</p>
+<p><strong>七、删除分支</strong></p>
+<pre><code>git branch -d &lt;分支名&gt; 
+</code></pre><p>如果该分支没有合并到主分支会报错，可以用以下命令强制删除</p>
+<pre><code>git branch -D &lt;分支名&gt;
+</code></pre><p><strong>八、删除库</strong></p>
+<pre><code>rm -rf &lt;库名&gt;
+</code></pre><h3 id="创建项目站点-demo"><a href="#创建项目站点-demo" class="headerlink" title="创建项目站点(demo)"></a>创建项目站点(demo)</h3><pre><code>$ git clone https://github.com/USERNAME/PROJECT.git
+$ git checkout --orphan gh-pages
+$ git rm -rf .（可选，在里面放要展示的demo）
+$ git add .
+$ git commit -a -m &quot;First pages commit&quot;
+$ git push origin gh-pages
+$ 或者
+$ git push -u origin HEAD
+</code></pre><h4 id="使用Git在本地创建一个项目的过程"><a href="#使用Git在本地创建一个项目的过程" class="headerlink" title="使用Git在本地创建一个项目的过程"></a>使用Git在本地创建一个项目的过程</h4><pre><code>$ makdir ~/hello-world    //创建一个项目hello-world
+$ cd ~/hello-world       //打开这个项目
+$ git init             //初始化 
+$ touch README
+$ git add README        //更新README文件
+$ git commit -m &apos;first commit&apos;     //提交更新，并注释信息“first commit” 
+$ git remote add origin git@github.com:username/hello-world.git     //连接远程github项目  
+$ git push -u origin master     //将本地项目更新到github项目上去
+</code></pre><h4 id="使用Github创建的过程"><a href="#使用Github创建的过程" class="headerlink" title="使用Github创建的过程"></a>使用Github创建的过程</h4><pre><code>1、新建repo，copy git.io地址
+2、$ git clone git.io地址
+</code></pre><h4 id="删除本地仓库："><a href="#删除本地仓库：" class="headerlink" title="删除本地仓库："></a><em>删除本地仓库：</em></h4><pre><code>find . -name &quot;.git&quot; | xargs rm -Rf
+</code></pre><h4 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h4><pre><code>git remote rm origin            //删除源origin
+git pull origin master        //将github上的项目拉下来
+git remote rm origin             //删除源origin
+git pull origin master      //将github上的项目拉下来
+git fetch origin          //获取远程更新
+git merge origin/master //把更新合并
+//pull=fetch+merge
+git remote          //查看远程仓库
+git branch          //查看当前分支
+</code></pre><p><strong>about SSH</strong>：</p>
+<p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre><p><br></p>
+<hr>
+<p><strong><em>相关链接：</em></strong>    </p>
+<ul>
+<li><a href="http://my.oschina.net/xdev/blog/114383" target="_blank" rel="external">图解Git[强烈推荐]</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">Git-简明指南[超简练]</a></li>
+<li><a href="http://www.worldhello.net/gotgithub/" target="_blank" rel="external">GotGitHub[从零开始推荐]</a></li>
+<li><a href="http://blog.csdn.net/dengjianqiang2011/article/details/9260435" target="_blank" rel="external">github常见操作和常见错误！</a></li>
+<li><a href="http://862123204-qq-com.iteye.com/blog/1683315" target="_blank" rel="external">git push用法和常见问题分析</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git push -u origin master 时出错]]></title>
+      <url>http://yoursite.com/2016/08/01/git-push-u-origin-master-%E6%97%B6%E5%87%BA%E9%94%99/</url>
+      <content type="html"><![CDATA[<p><strong>git push -u origin master时出错：</strong></p>
+<pre><code>$ git push -u origin master
+To git@github.com:******/Demo.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to &apos;git@github.com:username/xxx.git&apos;
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. &apos;git pull&apos;)
+hint: before pushing again.
+hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.
+</code></pre><p>远程repository和本地的repository冲突导致的，而我在创建版本库后，在github的版本库页面点击了创建README.md文件的按钮创建了说明文档，但是却没有pull到本地。这样就产生了版本冲突的问题。</p>
+<p>有如下几种解决方法：</p>
+<p>1.强制push</p>
+<pre><code>$ git push -u origin master -f 
+</code></pre><p>这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。</p>
+<p>2.push前先将远程repository修改pull下来</p>
+<pre><code>$ git pull origin master
+$ git push -u origin master
+</code></pre><p>3.若不想merge远程和本地修改，可以先创建新的分支：</p>
+<pre><code>$ git branch [name]
+</code></pre><p>然后push</p>
+<pre><code>$ git push -u origin [name]
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/08/01/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
