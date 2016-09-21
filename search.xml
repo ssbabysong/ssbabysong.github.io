@@ -5,11 +5,8 @@
     
     <entry>
       <title><![CDATA[谜之js]]></title>
-      <url>http://yoursite.com/2016/09/22/js/</url>
-      <content type="html"><![CDATA[<p>###Firstly</p>
-<p>####数组</p>
-<p>#####几种常用方法：</p>
-<ul>
+      <url>http://yoursite.com/2016/09/02/%E8%B0%9C%E4%B9%8Bjs/</url>
+      <content type="html"><![CDATA[<h3 id="Firstly"><a href="#Firstly" class="headerlink" title="Firstly"></a>Firstly</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="几种常用方法："><a href="#几种常用方法：" class="headerlink" title="几种常用方法："></a>几种常用方法：</h5><ul>
 <li><strong><em>indexOf( )</em></strong> 来搜索一个指定的元素的位置</li>
 <li><p><strong><em>slice( )</em></strong>就是对应String的<strong><em>substring( )</em></strong>版本，它截取Array的部分元素，然后返回一个新的Array。</p>
 <ul>
@@ -35,12 +32,11 @@ aCopy === arr; // false
 </code></pre></li>
 <li><strong><em>join( )</em></strong>方法把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串</li>
 </ul>
-<p>####对象</p>
-<ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><ul>
 <li>如果我们要检测xiaoming是否拥有某一属性，可以用<strong><em>in</em></strong>操作符：’name’ in xiaoming;</li>
 <li>不过要小心，如果in判断一个属性存在，这个属性不一定是xiaoming的，它可能是xiaoming继承得到的：要判断一个属性是否是xiaoming自身拥有的，而不是继承得到的，可以用<strong><em>hasOwnProperty(‘name’)</em></strong>方法：</li>
 </ul>
-<p>####Map和Set<br>JavaScript的默认对象表示方式{}可以视为其他语言中的Map或Dictionary的数据结构，即一组键值对。但是JavaScript的对象有个小问题，就是键必须是字符串。但实际上Number或者其他数据类型作为键也是非常合理的。</p>
+<h4 id="Map和Set"><a href="#Map和Set" class="headerlink" title="Map和Set"></a>Map和Set</h4><p>JavaScript的默认对象表示方式{}可以视为其他语言中的Map或Dictionary的数据结构，即一组键值对。但是JavaScript的对象有个小问题，就是键必须是字符串。但实际上Number或者其他数据类型作为键也是非常合理的。</p>
 <ul>
 <li><p>为了解决这个问题，最新的ES6规范引入了新的数据类型Map</p>
 <pre><code>var m = new Map([[&apos;Michael&apos;, 95], [&apos;Bob&apos;, 75], [&apos;Tracy&apos;, 85]]);
@@ -53,9 +49,9 @@ var s2 = new Set([1, 2, 3]); // 含1, 2, 3
 //重复元素在Set中自动被过滤
 </code></pre></li>
 </ul>
-<p>####iterable<br>遍历Array可以采用下标循环，遍历Map和Set就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。具有iterable类型的集合可以通过新的<strong><em>for … of</em></strong>循环来遍历。(for … of循环是ES6引入的新的语法)</p>
-<p>#####for … of循环和for … in循环有何区别？<br>for … of循环只循环集合本身的元素 in还遍历继承来的属性</p>
-<p>#####forEach方法<br>更好的方法是<strong><em>forEach方法</em></strong>，它接收一个函数，每次迭代就自动回调该函数。以Array为例：</p>
+<h4 id="iterable"><a href="#iterable" class="headerlink" title="iterable"></a>iterable</h4><p>遍历Array可以采用下标循环，遍历Map和Set就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。具有iterable类型的集合可以通过新的<strong><em>for … of</em></strong>循环来遍历。(for … of循环是ES6引入的新的语法)</p>
+<h5 id="for-…-of循环和for-…-in循环有何区别？"><a href="#for-…-of循环和for-…-in循环有何区别？" class="headerlink" title="for … of循环和for … in循环有何区别？"></a>for … of循环和for … in循环有何区别？</h5><p>for … of循环只循环集合本身的元素 in还遍历继承来的属性</p>
+<h5 id="forEach方法"><a href="#forEach方法" class="headerlink" title="forEach方法"></a>forEach方法</h5><p>更好的方法是<strong><em>forEach方法</em></strong>，它接收一个函数，每次迭代就自动回调该函数。以Array为例：</p>
 <pre><code>var a = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];
 a.forEach(function (element, index, array) {
     // element: 指向当前元素的值
@@ -73,9 +69,7 @@ s.forEach(function (element, sameElement, set) {
 m.forEach(function (value, key, map) {
     alert(value);
 });
-</code></pre><p>###函数</p>
-<p>####arguments</p>
-<p>JavaScript还有一个免费赠送的关键字arguments，它只在函数内部起作用，并且永远指向当前函数的调用者传入的所有参数。arguments类似Array但它不是一个Array：</p>
+</code></pre><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h4><p>JavaScript还有一个免费赠送的关键字arguments，它只在函数内部起作用，并且永远指向当前函数的调用者传入的所有参数。arguments类似Array但它不是一个Array：</p>
 <pre><code>function foo(x) {
     alert(x); // 10
     for (var i=0; i&lt;arguments.length; i++) {
@@ -94,7 +88,7 @@ function foo(a, b, c) {
     }
     // ...
 }
-</code></pre><p>####rest<br>要把中间的参数b变为“可选”参数，就只能通过arguments判断，然后重新调整参数并赋值。<br>ES6标准引入了rest参数，上面的函数可以改写为：</p>
+</code></pre><h4 id="rest"><a href="#rest" class="headerlink" title="rest"></a>rest</h4><p>要把中间的参数b变为“可选”参数，就只能通过arguments判断，然后重新调整参数并赋值。<br>ES6标准引入了rest参数，上面的函数可以改写为：</p>
 <pre><code>function foo(a, b, ...rest) {
     console.log(&apos;a = &apos; + a);
     console.log(&apos;b = &apos; + b);
@@ -118,8 +112,7 @@ foo(1);
 <li><p>如果传入的参数连正常定义的参数都没填满，也不要紧，rest参数会接收一个空数组（注意不是undefined）。</p>
 </li>
 </ul>
-<p>####名字空间</p>
-<p>全局变量会绑定到window上，不同的JavaScript文件如果使用了相同的全局变量，或者定义了相同名字的顶层函数，都会造成命名冲突，并且很难被发现。</p>
+<h4 id="名字空间"><a href="#名字空间" class="headerlink" title="名字空间"></a>名字空间</h4><p>全局变量会绑定到window上，不同的JavaScript文件如果使用了相同的全局变量，或者定义了相同名字的顶层函数，都会造成命名冲突，并且很难被发现。</p>
 <p>减少冲突的一个方法是把自己的所有变量和函数全部绑定到一个全局变量中。例如：</p>
 <pre><code>// 唯一的全局变量MYAPP:
 var MYAPP = {};
@@ -132,7 +125,7 @@ MYAPP.version = 1.0;
 MYAPP.foo = function () {
     return &apos;foo&apos;;
 };
-</code></pre><p>####apply call<br>要指定函数的this指向哪个对象，可以用函数本身的apply方法，它接收两个参数，第一个参数就是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。</p>
+</code></pre><h4 id="apply-call"><a href="#apply-call" class="headerlink" title="apply call"></a>apply call</h4><p>要指定函数的this指向哪个对象，可以用函数本身的apply方法，它接收两个参数，第一个参数就是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。</p>
 <p>用apply修复getAge()调用：</p>
 <pre><code>function getAge() {
     var y = new Date().getFullYear();
@@ -152,8 +145,7 @@ getAge.apply(xiaoming, []); // 25, this指向xiaoming, 参数为空
 <p>call()把参数按顺序传入。</p>
 <p>比如调用Math.max(3, 5, 4)，分别用apply()和call()实现如下：</p>
 <p>Math.max.apply(null, [3, 5, 4]); // 5<br>Math.max.call(null, 3, 5, 4); // 5<br>对普通函数调用，我们通常把this绑定为null。</p>
-<p>####装饰器</p>
-<p>利用apply()，我们还可以动态改变函数的行为。</p>
+<h4 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h4><p>利用apply()，我们还可以动态改变函数的行为。</p>
 <p>JavaScript的所有对象都是动态的，即使内置的函数，我们也可以重新指向新的函数。</p>
 <p>现在假定我们想统计一下代码一共调用了多少次parseInt()，可以把所有的调用都找出来，然后手动加上count += 1，不过这样做太傻了。最佳方案是用我们自己的函数替换掉默认的parseInt()：</p>
 <pre><code>var count = 0;
@@ -169,16 +161,16 @@ parseInt(&apos;10&apos;);
 parseInt(&apos;20&apos;);
 parseInt(&apos;30&apos;);
 count; // 3
-</code></pre><p>####高阶函数<br>把函数作为参数传到另一个函数</p>
+</code></pre><h4 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h4><p>把函数作为参数传到另一个函数</p>
 <pre><code>function add(x, y, f) {
 return f(x) + f(y);
 }
-</code></pre><p>#####map<br>map方法定义在Array中，参数是函数，对数组每一项执行函数。</p>
+</code></pre><h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><p>map方法定义在Array中，参数是函数，对数组每一项执行函数。</p>
 <p>所以，map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x2，还可以计算任意复杂的函数，比如，把Array的所有数字转为字符串：</p>
 <pre><code>var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 arr.map(String); // [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
 </code></pre><p>只需要一行代码。</p>
-<p>#####reduce<br>比方说对一个Array求和，就可以用reduce实现：</p>
+<h5 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h5><p>比方说对一个Array求和，就可以用reduce实现：</p>
 <pre><code>var arr = [1, 3, 5, 7, 9];
 arr.reduce(function (x, y) {
     return x + y;
@@ -214,9 +206,9 @@ var r;
 r = arr.map(r = arr.map(function (x){return +x;}););
 
 alert(&apos;[&apos; + r[0] + &apos;, &apos; + r[1] + &apos;, &apos; + r[2] + &apos;]&apos;);
-</code></pre><p>#####filter<br>参数也是函数，把函数作用于每个元素，根据return true还是false来决定保留还是丢弃元素</p>
-<p>#####sort<br>sort按照ascii码进行排序，但sort()方法也是一个高阶函数，也可以接收一个比较函数来实现自定义的排序。！</p>
-<p>####闭包<br>在面向对象的程序设计语言里，比如Java和C++，要在对象内部封装一个私有变量，可以用private修饰一个成员变量。</p>
+</code></pre><h5 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h5><p>参数也是函数，把函数作用于每个元素，根据return true还是false来决定保留还是丢弃元素</p>
+<h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><p>sort按照ascii码进行排序，但sort()方法也是一个高阶函数，也可以接收一个比较函数来实现自定义的排序。！</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>在面向对象的程序设计语言里，比如Java和C++，要在对象内部封装一个私有变量，可以用private修饰一个成员变量。</p>
 <p>在没有class机制，只有函数的语言里，借助闭包，同样可以封装一个私有变量。我们用JavaScript创建一个计数器：</p>
 <pre><code>&apos;use strict&apos;;
 
@@ -279,7 +271,7 @@ function add(n, m) {
     }
 }    
 </code></pre><p><em>参见维基百科<a href="https://zh.wikipedia.org/wiki/%CE%9B%E6%BC%94%E7%AE%97" target="_blank" rel="external">λ演算</a></em></p>
-<p>####箭头函数<br><em>ES6新增函数 Arrow Function</em></p>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p><em>ES6新增函数 Arrow Function</em></p>
 <pre><code>x =&gt; x * x
 </code></pre><p>上面的箭头函数相当于一个匿名函数：</p>
 <pre><code>function (x) {
@@ -291,7 +283,7 @@ function add(n, m) {
 </ul>
 <p><em>箭头函数与匿名函数的区别：箭头函数内部的this是词法作用域，也就是外层调用者obj，由上下文确定</em></p>
 <p><em>由于this在箭头函数中已经按照词法作用域绑定了，所以，用call()或者apply()调用箭头函数时，无法对this进行绑定，即传入的第一个参数被忽略</em></p>
-<p>####generator<br>generator（生成器）是ES6标准引入的新的数据类型。一个generator看上去像一个函数，但可以返回多次。</p>
+<h4 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h4><p>generator（生成器）是ES6标准引入的新的数据类型。一个generator看上去像一个函数，但可以返回多次。</p>
 <p>直接调用一个generator和调用函数不一样，fib(5)仅仅是创建了一个generator对象，还没有去执行它。</p>
 <p>调用generator对象有两个方法，一是不断地调用generator对象的<strong><em>next()</em></strong>方法：</p>
 <pre><code>var f = fib(5);
@@ -306,8 +298,7 @@ f.next(); // {value: 3, done: true}
 <pre><code>for (var x of fib(5)) {
     console.log(x); // 依次输出0, 1, 1, 2, 3
 }
-</code></pre><p>###标准对象</p>
-<ul>
+</code></pre><h3 id="标准对象"><a href="#标准对象" class="headerlink" title="标准对象"></a>标准对象</h3><ul>
 <li><p>不要使用new Number()、new Boolean()、new String()创建包装对象；</p>
 </li>
 <li><p>用parseInt()或parseFloat()来转换任意类型到number；</p>
@@ -333,8 +324,7 @@ f.next(); // {value: 3, done: true}
 (123).toString(); // &apos;123&apos;
 </code></pre></li>
 </ul>
-<p>####Date</p>
-<pre><code>var now = new Date();
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><pre><code>var now = new Date();
 now; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)
 now.getFullYear(); // 2015, 年份
 now.getMonth(); // 5, 月份，注意月份范围是0~11，5表示六月
@@ -346,9 +336,8 @@ now.getSeconds(); // 22, 秒
 now.getMilliseconds(); // 875, 毫秒数
 now.getTime(); // 1435146562875, 以number形式表示的时间戳
 </code></pre><p><em>ps:getmouth()从0-11</em></p>
-<p>####RegExp<br>用*表示任意个字符（包括0个），用+表示至少一个字符，用?表示0个或1个字符，用{n}表示n个字符，用{n,m}表示n-m个字符</p>
-<p>#####创建正则表达式：</p>
-<ol>
+<h4 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h4><p>用*表示任意个字符（包括0个），用+表示至少一个字符，用?表示0个或1个字符，用{n}表示n个字符，用{n,m}表示n-m个字符</p>
+<h5 id="创建正则表达式："><a href="#创建正则表达式：" class="headerlink" title="创建正则表达式："></a>创建正则表达式：</h5><ol>
 <li>/…/</li>
 <li>new RegExp(‘…’)</li>
 </ol>
@@ -365,13 +354,13 @@ re.test(&apos;010-12345&apos;); // true
 re.test(&apos;010-1234x&apos;); // false
 re.test(&apos;010 12345&apos;); // false
 </code></pre><p>RegExp对象的test()方法用于测试给定的字符串是否符合条件。</p>
-<p>#####提取子串：exec();</p>
-<pre><code>var re = /^(\d{3})-(\d{3,8})$/;
+<h5 id="提取子串：exec"><a href="#提取子串：exec" class="headerlink" title="提取子串：exec();"></a>提取子串：exec();</h5><pre><code>var re = /^(\d{3})-(\d{3,8})$/;
 re.exec(&apos;010-12345&apos;); // [&apos;010-12345&apos;, &apos;010&apos;, &apos;12345&apos;]
 re.exec(&apos;010 12345&apos;); // null
 </code></pre><ul>
 <li>exec()方法在匹配成功后，会返回一个Array，第一个元素是正则表达式匹配到的整个字符串，后面的字符串表示匹配成功的子串。</li>
-<li><p>exec()方法在匹配失败时返回null。<br>#####贪婪匹配<br>正则匹配默认是贪婪匹配，也就是匹配尽可能多的字符。举例如下，匹配出数字后面的0：</p>
+<li><p>exec()方法在匹配失败时返回null。</p>
+<h5 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h5><p>正则匹配默认是贪婪匹配，也就是匹配尽可能多的字符。举例如下，匹配出数字后面的0：</p>
 <pre><code>var re = /^(\d+)(0*)$/;
 re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&apos;]
 </code></pre><p>由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了。</p>
@@ -380,7 +369,7 @@ re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;102300&apos;, &apos;&
 <p>必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来，加个?就可以让\d+采用非贪婪匹配：</p>
 <pre><code>var re = /^(\d+?)(0*)$/;
 re.exec(&apos;102300&apos;); // [&apos;102300&apos;, &apos;1023&apos;, &apos;00&apos;]
-</code></pre><p>#####全局搜索<br>g：全局搜索</p>
+</code></pre><h5 id="全局搜索"><a href="#全局搜索" class="headerlink" title="全局搜索"></a>全局搜索</h5><p>g：全局搜索</p>
 <pre><code>var r1 = /test/g;
 // 等价于:
 var r2 = new RegExp(&apos;test&apos;, &apos;g&apos;);
@@ -391,7 +380,7 @@ var r2 = new RegExp(&apos;test&apos;, &apos;g&apos;);
 //正则的｛｝里表示匹配次数
 //()表示的就是要提取的分组（Group）
 var re = /^(\d{3})-(\d{3,8})$/;
-</code></pre><p>####JSON<br>JavaScript Object Notation</p>
+</code></pre><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>JavaScript Object Notation</p>
 <p>JSON是一种数据交换格式，很多高级语言内置了JSON库。<br>1.序列化（把JavaScript对象变成JSON）</p>
 <pre><code>//首先定义一个对象xiaoming
 var xiaoming{
@@ -416,7 +405,7 @@ JSON.stringify(xiaoming,null,&apos;  &apos;);
     }
     return value;
 });
-</code></pre><p>###面向对象编程<br>创建原型的方法</p>
+</code></pre><h3 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h3><p>创建原型的方法</p>
 <pre><code>var Student = {
     name: &apos;Robot&apos;,
     height: 1.2,
@@ -466,8 +455,7 @@ Object.getPrototypeOf(xiaoming) === Student.prototype; // true
 
 xiaoming instanceof Student; // true
 </code></pre><p><img src="http://www.liaoxuefeng.com/files/attachments/00143529922671163eebb527bc14547ac11363bf186557d000/l" alt="原型链"></p>
-<p>####原型继承＊＊important</p>
-<pre><code>// PrimaryStudent构造函数:
+<h4 id="原型继承＊＊important"><a href="#原型继承＊＊important" class="headerlink" title="原型继承＊＊important"></a>原型继承＊＊important</h4><pre><code>// PrimaryStudent构造函数:
 function PrimaryStudent(props) {
     Student.call(this, props);
     this.grade = props.grade || 1;
@@ -545,7 +533,7 @@ PrimaryStudent.prototype.getGrade = function () {
 <li><p>继续在新的构造函数的原型上定义新方法。</p>
 </li>
 </ol>
-<p>####class继承<br>class从ES6开始正式被引入到JavaScript中。class的目的就是让定义类更简单。</p>
+<h4 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h4><p>class从ES6开始正式被引入到JavaScript中。class的目的就是让定义类更简单。</p>
 <pre><code>class Student {
     constructor(name) {
         this.name = name;
@@ -571,9 +559,7 @@ class PrimaryStudent extends Student {
         alert(&apos;I am at grade &apos; + this.grade);
     }
 }
-</code></pre><p>###浏览器</p>
-<p>####浏览器对象</p>
-<ul>
+</code></pre><h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><h4 id="浏览器对象"><a href="#浏览器对象" class="headerlink" title="浏览器对象"></a>浏览器对象</h4><ul>
 <li><p>window</p>
 </li>
 <li><p>navigator</p>
@@ -631,7 +617,7 @@ location.reload();//重新加载当前页面
 <p>   任何时候都不建议用</p>
 </li>
 </ul>
-<p>####操作dom两种方法：document.get和queryselector<br>方法一</p>
+<h4 id="操作dom两种方法：document-get和queryselector"><a href="#操作dom两种方法：document-get和queryselector" class="headerlink" title="操作dom两种方法：document.get和queryselector"></a>操作dom两种方法：document.get和queryselector</h4><p>方法一</p>
 <pre><code>// 返回ID为&apos;test&apos;的节点：
 var test = document.getElementById(&apos;test&apos;);
 
@@ -653,8 +639,7 @@ var q1 = document.querySelector(&apos;#q1&apos;);
 
 // 通过querySelectorAll获取q1节点内的符合条件的所有节点：
 var ps = q1.querySelectorAll(&apos;div.highlighted &gt; p&apos;);
-</code></pre><p>#####更新dom</p>
-<ul>
+</code></pre><h5 id="更新dom"><a href="#更新dom" class="headerlink" title="更新dom"></a>更新dom</h5><ul>
 <li><p>修改innerhtml属性，要注意对字符编码来避免XSS攻击</p>
 </li>
 <li><p>修改innertext和innercontent属性，确保无法设置html标签</p>
@@ -668,7 +653,7 @@ p.style.fontSize = &apos;20px&apos;;
 p.style.paddingTop = &apos;2em&apos;;
 </code></pre></li>
 </ul>
-<p>#####插入dom<br>appendChild</p>
+<h5 id="插入dom"><a href="#插入dom" class="headerlink" title="插入dom"></a>插入dom</h5><p>appendChild</p>
 <pre><code>var d = document.createElement(&apos;style&apos;);
 d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
 d.innerHTML = &apos;p { color: red }&apos;;
@@ -690,7 +675,7 @@ document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);
 haskell.id = &apos;haskell&apos;;
 haskell.innerText = &apos;Haskell&apos;;
 list.insertBefore(haskell, ref);
-</code></pre><p>#####删除dom<br>先获得父节点，然后removechild</p>
+</code></pre><h5 id="删除dom"><a href="#删除dom" class="headerlink" title="删除dom"></a>删除dom</h5><p>先获得父节点，然后removechild</p>
 <pre><code>// 拿到待删除节点:
 var self = document.getElementById(&apos;to-be-removed&apos;);
 // 拿到父节点:
@@ -700,7 +685,7 @@ var removed = parent.removeChild(self);
 removed === self; // true
 </code></pre><p><em>注意到删除后的节点虽然不在文档树中了，但其实它还在内存中，可以随时再次被添加到别的位置。</em></p>
 <p>当你遍历一个父节点的子节点并进行删除操作时，要注意，children属性是一个只读属性，并且它在子节点变化时会实时更新。</p>
-<p>####操作表单<br>HTML5新增了大量标准控件，常用的包括date、datetime、datetime-local、color等，它们都使用\<input>标签：</p>
+<h4 id="操作表单"><a href="#操作表单" class="headerlink" title="操作表单"></a>操作表单</h4><p>HTML5新增了大量标准控件，常用的包括date、datetime、datetime-local、color等，它们都使用\<input>标签：</p>
 <pre><code>&lt;input type=&quot;date&quot; value=&quot;2015-07-01&quot;&gt;
 &lt;input type=&quot;datetime-local&quot; value=&quot;2015-07-01T02:03:04&quot;&gt;
 &lt;input type=&quot;color&quot; value=&quot;#ff0000&quot;&gt;
@@ -770,7 +755,7 @@ function checkForm() {
     return true;
 }
 &lt;/script&gt;
-</code></pre><p>####操作文件<br>在HTML表单中，可以上传文件的唯一控件就是\<input type="file">。</p>
+</code></pre><h4 id="操作文件"><a href="#操作文件" class="headerlink" title="操作文件"></a>操作文件</h4><p>在HTML表单中，可以上传文件的唯一控件就是\<input type="file">。</p>
 <p>注意：当一个表单包含\<input type="file">时，表单的enctype必须指定为multipart/form-data，method必须指定为post，浏览器才能正确编码并以multipart/form-data格式发送表单的数据。</p>
 <p>出于安全考虑，浏览器只允许用户点击\<input type="file">来选择本地文件，用JavaScript对\<input type="file">的value赋值是没有任何效果的。当用户选择了上传某个文件后，JavaScript也无法获得该文件的真实路径</p>
 <p>但是js可以在提交表单时对文件扩展名做检查</p>
@@ -825,7 +810,7 @@ fileInput.addEventListener(&apos;change&apos;, function () {
     // 当文件读取完成后，自动调用此函数:
 };
 </code></pre><p>当文件读取完成后，JavaScript引擎将自动调用我们设置的回调函数。执行回调函数时，文件已经读取完毕，所以我们可以在回调函数内部安全地获得文件内容。</p>
-<p>####AJAX<br>AJAX请求是异步执行的，也就是说，要通过回调函数获得响应。</p>
+<h4 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h4><p>AJAX请求是异步执行的，也就是说，要通过回调函数获得响应。</p>
 <p>在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：</p>
 <pre><code>function success(text) {
     var textarea = document.getElementById(&apos;test-response-text&apos;);
@@ -859,12 +844,9 @@ request.open(&apos;GET&apos;, &apos;/api/categories&apos;);
 request.send();
 
 alert(&apos;请求已发送，请等待响应...&apos;);
-</code></pre><p>#####CORS？？？</p>
-<p>####Promise？？？</p>
-<p>####Canvas<em>*</em><br>Canvas的坐标以左上角为原点，水平向右为X轴，垂直向下为Y轴，以像素为单位，所以每个点都是非负整数。</p>
+</code></pre><h5 id="CORS？？？"><a href="#CORS？？？" class="headerlink" title="CORS？？？"></a>CORS？？？</h5><h4 id="Promise？？？"><a href="#Promise？？？" class="headerlink" title="Promise？？？"></a>Promise？？？</h4><h4 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas*"></a>Canvas<em>*</em></h4><p>Canvas的坐标以左上角为原点，水平向右为X轴，垂直向下为Y轴，以像素为单位，所以每个点都是非负整数。</p>
 <p><code>CanvasRenderingContext2D</code>对象有若干方法来</p>
-<p>#####绘制图形：</p>
-<pre><code>&apos;use strict&apos;;
+<h5 id="绘制图形："><a href="#绘制图形：" class="headerlink" title="绘制图形："></a>绘制图形：</h5><pre><code>&apos;use strict&apos;;
 
 var
     canvas = document.getElementById(&apos;test-shape-canvas&apos;),
@@ -883,8 +865,7 @@ var
     path.arc(90, 65, 5, 0, Math.PI*2, true);
     ctx.strokeStyle = &apos;#0000ff&apos;;
     ctx.stroke(path);
-</code></pre><p>#####绘制文本</p>
-<p>绘制文本就是在指定的位置输出文本，可以设置文本的字体、样式、阴影等，与CSS完全一致：</p>
+</code></pre><h5 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h5><p>绘制文本就是在指定的位置输出文本，可以设置文本的字体、样式、阴影等，与CSS完全一致：</p>
 <pre><code>&apos;use strict&apos;;
 
 var
