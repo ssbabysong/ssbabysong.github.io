@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[testimg]]></title>
+      <url>http://yoursite.com/2017/03/05/testimg/</url>
+      <content type="html"><![CDATA[<p><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div><br><a id="more"></a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[谜之js]]></title>
       <url>http://yoursite.com/2016/09/02/%E8%B0%9C%E4%B9%8Bjs/</url>
       <content type="html"><![CDATA[<h3 id="Firstly"><a href="#Firstly" class="headerlink" title="Firstly"></a>Firstly</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><h5 id="几种常用方法："><a href="#几种常用方法：" class="headerlink" title="几种常用方法："></a>几种常用方法：</h5><ul>
@@ -11,16 +18,11 @@
 <li><p><strong><em>slice( )</em></strong>就是对应String的<strong><em>substring( )</em></strong>版本，它截取Array的部分元素，然后返回一个新的Array。</p>
 <ul>
 <li><p>注意到slice( )的起止参数包括开始索引，不包括结束索引。</p>
-<pre><code> var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;];
-arr.slice(0, 3); // 从索引0开始，到索引3结束，但不包括索引3: [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;]
-arr.slice(3); // 从索引3开始到结束: [&apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;]
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>];</div><div class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']</span></div><div class="line">arr.slice(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: ['D', 'E', 'F', 'G']</span></div></pre></td></tr></table></figure>
+</li>
 <li><p>如果不给slice( )传递任何参数，它就会从头到尾截取所有元素。</p>
-<pre><code> var arr = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;];
-var aCopy = arr.slice();
-aCopy; // [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;]
-aCopy === arr; // false
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>];</div><div class="line"><span class="keyword">var</span> aCopy = arr.slice();</div><div class="line">aCopy; <span class="comment">// ['A', 'B', 'C', 'D', 'E', 'F', 'G']</span></div><div class="line">aCopy === arr; <span class="comment">// false</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -996,7 +998,9 @@ $ source ./bin/activate
     <entry>
       <title><![CDATA[Git整理]]></title>
       <url>http://yoursite.com/2016/08/01/Git%E6%95%B4%E7%90%86/</url>
-      <content type="html"><![CDATA[<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><p><strong>一、创建库</strong></p>
+      <content type="html"><![CDATA[<p><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div></p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><a id="more"></a>
+<p><strong>一、创建库</strong></p>
 <pre><code>git init &lt;库名&gt;
 </code></pre><p><strong>二、创建分支</strong> (打开刚创建的库: cd &lt;库名&gt;)</p>
 <pre><code>git branch &lt;分支名&gt;

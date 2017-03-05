@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -51,11 +51,17 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -84,50 +90,25 @@
 
 
 
-<meta name="description" content="基本命令一、创建库
-git init &amp;lt;库名&amp;gt;
-二、创建分支 (打开刚创建的库: cd &amp;lt;库名&amp;gt;)
-git branch &amp;lt;分支名&amp;gt;
-注：如果创建分支失败，建立一个测试文本文件即可。
-1. git add .
-2. git commit -a -m &amp;quot;test&amp;quot;
-三、切换分支
-git checkout &amp;lt;分支名&amp;gt; 
-该语句和上一个">
+<meta name="description" content="基本命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git整理">
 <meta property="og:url" content="http://yoursite.com/2016/08/01/Git整理/index.html">
-<meta property="og:site_name" content="Blog  | ssBabysong">
-<meta property="og:description" content="基本命令一、创建库
-git init &amp;lt;库名&amp;gt;
-二、创建分支 (打开刚创建的库: cd &amp;lt;库名&amp;gt;)
-git branch &amp;lt;分支名&amp;gt;
-注：如果创建分支失败，建立一个测试文本文件即可。
-1. git add .
-2. git commit -a -m &amp;quot;test&amp;quot;
-三、切换分支
-git checkout &amp;lt;分支名&amp;gt; 
-该语句和上一个">
-<meta property="og:updated_time" content="2016-08-01T08:50:52.000Z">
+<meta property="og:site_name" content="Blog  | Chenss">
+<meta property="og:description" content="基本命令">
+<meta property="og:image" content="http://rogerdudler.github.io/git-guide/img/trees.png">
+<meta property="og:updated_time" content="2017-03-05T10:44:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git整理">
-<meta name="twitter:description" content="基本命令一、创建库
-git init &amp;lt;库名&amp;gt;
-二、创建分支 (打开刚创建的库: cd &amp;lt;库名&amp;gt;)
-git branch &amp;lt;分支名&amp;gt;
-注：如果创建分支失败，建立一个测试文本文件即可。
-1. git add .
-2. git commit -a -m &amp;quot;test&amp;quot;
-三、切换分支
-git checkout &amp;lt;分支名&amp;gt; 
-该语句和上一个">
+<meta name="twitter:description" content="基本命令">
+<meta name="twitter:image" content="http://rogerdudler.github.io/git-guide/img/trees.png">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -145,7 +126,7 @@ git checkout &amp;lt;分支名&amp;gt;
 
       <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-  <title> Git整理 | Blog  | ssBabysong </title>
+  <title> Git整理 | Blog  | Chenss </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -186,7 +167,7 @@ git checkout &amp;lt;分支名&amp;gt;
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Blog  | ssBabysong</span>
+      <span class="site-title">Blog  | Chenss</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -244,6 +225,16 @@ git checkout &amp;lt;分支名&amp;gt;
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/resume.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -374,7 +365,9 @@ git checkout &amp;lt;分支名&amp;gt;
       
 
       
-        <h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><p><strong>一、创建库</strong></p>
+        <p><div><img src="http://rogerdudler.github.io/git-guide/img/trees.png" style=""></div></p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><a id="more"></a>
+<p><strong>一、创建库</strong></p>
 <pre><code>git init &lt;库名&gt;
 </code></pre><p><strong>二、创建分支</strong> (打开刚创建的库: cd &lt;库名&gt;)</p>
 <pre><code>git branch &lt;分支名&gt;
@@ -580,14 +573,14 @@ git branch          //查看当前分支
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
-               alt="ssBabysong" />
-          <p class="site-author-name" itemprop="name">ssBabysong</p>
+               alt="Chenss" />
+          <p class="site-author-name" itemprop="name">Chenss</p>
           <p class="site-description motion-element" itemprop="description">不知我者，谓我何求</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -635,15 +628,6 @@ git branch          //查看当前分支
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/chi-san-san-43" target="_blank" title="ZhiHu">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  ZhiHu
-                </a>
-              </span>
-            
           
         </div>
 
@@ -681,11 +665,11 @@ git branch          //查看当前分支
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ssBabysong</span>
+  <span class="author" itemprop="copyrightHolder">Chenss</span>
 </div>
 
 <div class="powered-by">
@@ -695,7 +679,7 @@ git branch          //查看当前分支
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -761,6 +745,13 @@ git branch          //查看当前分支
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
@@ -781,7 +772,7 @@ git branch          //查看当前分支
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"ssBabysong"};
+    var duoshuoQuery = {short_name:"Chenss"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
