@@ -90,14 +90,17 @@
 
 
 
+<meta name="description" content="代码地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack配置教程">
 <meta property="og:url" content="http://yoursite.com/2017/03/07/Webpack探索/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
+<meta property="og:description" content="代码地址">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/08/58bef2f11655f.png">
-<meta property="og:updated_time" content="2017-03-07T18:18:55.000Z">
+<meta property="og:updated_time" content="2017-03-07T18:32:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack配置教程">
+<meta name="twitter:description" content="代码地址">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/08/58bef2f11655f.png">
 
 
@@ -362,10 +365,10 @@
       
 
       
-        <p><img src="https://ooo.0o0.ooo/2017/03/08/58bef2f11655f.png" alt="依赖项"><br><a id="more"></a></p>
+        <p><img src="https://ooo.0o0.ooo/2017/03/08/58bef2f11655f.png" alt="依赖项"><br><a href="https://github.com/ssbabysong/webpack-study" target="_blank" rel="external">代码地址</a><br><a id="more"></a></p>
 <h2 id="最终配置文件"><a href="#最终配置文件" class="headerlink" title="最终配置文件"></a>最终配置文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js</span></div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">  entry: path.resolve(__dirname, <span class="string">'app/main.js'</span>),</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'build'</span>),</div><div class="line">    filename: <span class="string">'bundle.js'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.jsx?$/</span>,         <span class="comment">// Match both .js and .jsx files</span></div><div class="line">        exclude: <span class="regexp">/node_modules/</span>, </div><div class="line">        loader: <span class="string">"babel-loader"</span>, </div><div class="line">        query:</div><div class="line">          &#123;</div><div class="line">            presets:[<span class="string">'react'</span>]</div><div class="line">          &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>, <span class="comment">// Only .css files</span></div><div class="line">        loader: <span class="string">'style-loader!css-loader?modules'</span> </div><div class="line">      &#125;,</div><div class="line">      <span class="comment">// SASS</span></div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.scss$/</span>,</div><div class="line">        loader: <span class="string">'style-loader!css-loader!sass-loader?modules'</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.(png|jpg)$/</span>,</div><div class="line">        loader: <span class="string">'url?limit=25000'</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.woff$/</span>,</div><div class="line">        loader: <span class="string">'url?limit=100000'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> webpack.BannerPlugin(<span class="string">'This file is created by chenss'</span>)</div><div class="line">  ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//package.json</span></div><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"build"</span>: <span class="string">"webpack"</span>,</div><div class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --devtool eval --progress --colors --hot --content-base build"</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><ol>
 <li><p>新建项目文件结构</p>
 <pre><code>|-/app
 |--|-main.js
@@ -537,7 +540,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -595,7 +598,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最终配置文件"><span class="nav-number">1.</span> <span class="nav-text">最终配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最终配置文件"><span class="nav-number">1.</span> <span class="nav-text">最终配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装过程"><span class="nav-number">2.</span> <span class="nav-text">安装过程</span></a></li></ol></div>
             
           </div>
         </section>
