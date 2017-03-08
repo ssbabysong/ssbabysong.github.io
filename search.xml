@@ -47,7 +47,7 @@
       <title><![CDATA[React中文文档(一)Getting Started]]></title>
       <url>http://yoursite.com/2017/03/06/React%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3(%E4%B8%80)/</url>
       <content type="html"><![CDATA[<p><img src="https://ooo.0o0.ooo/2017/03/08/58bf86c6ce2b1.jpg" alt="react"></p>
-<p>本文翻译自<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">React官网教程</a>,欢迎指出错误。</p>
+<p>本文翻译自<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">React官网教程</a>,欢迎指出错误。<br><a id="more"></a></p>
 <h2 id="JSFiddle"><a href="#JSFiddle" class="headerlink" title="JSFiddle"></a>JSFiddle</h2><p>开始学习 React 的最简单的方法是用下面 JSFiddle 的 Hello World例子：</p>
 <ul>
 <li><a href="https://jsfiddle.net/reactjs/69z2wepo/" target="_blank" rel="external">React JSFiddle</a></li>
