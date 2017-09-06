@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Blog  | Chenss">
 <meta property="og:description" content="ES变量包含两种不同数据类型的值：基本类型值和引用类型值。 定义： 基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String. 引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。">
 <meta property="og:image" content="https://i.loli.net/2017/09/06/59afb472d3739.png">
-<meta property="og:updated_time" content="2017-09-06T08:47:19.000Z">
+<meta property="og:updated_time" content="2017-09-06T09:23:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript那些事儿(一)引用类型和基本类型">
 <meta name="twitter:description" content="ES变量包含两种不同数据类型的值：基本类型值和引用类型值。 定义： 基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String. 引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。">
@@ -377,40 +377,40 @@
 </ol>
 <h3 id="动态属性："><a href="#动态属性：" class="headerlink" title="动态属性："></a>动态属性：</h3><ol>
 <li><p>基本数据类型不能添加动态属性值。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var name = &apos;css&apos;;</div><div class="line">name.age = 21;      //不会报错</div><div class="line">alert(age.name);    //undefined</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'css'</span>;</div><div class="line">name.age = <span class="number">21</span>;      <span class="comment">//不会报错</span></div><div class="line">alert(age.name);    <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>引用类型的值可以添加删除动态属性和方法。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var person = new Object();</div><div class="line">person.name = &apos;css&apos;;</div><div class="line">alert(person.name);      //&apos;css&apos;</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">'css'</span>;</div><div class="line">alert(person.name);      <span class="comment">//'css'</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="复制变量值："><a href="#复制变量值：" class="headerlink" title="复制变量值："></a>复制变量值：</h3><ol>
 <li><p>基本数据类型复制会在变量对象上创建一个新值，然后把该值放在新变量分配的位置上。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num1 = 5;</div><div class="line">var num2 = num1;</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</div><div class="line"><span class="keyword">var</span> num2 = num1;</div></pre></td></tr></table></figure>
 <p> 此后num1和num2各自的操作不会影响另一方。</p>
 </li>
 <li><p>引用类型的复制 同样也会把存储在变量对象中的值复制一份到为新变量分配的空间中。不同的是：<strong>这个值的副本实际上是一个指针</strong>，这个指针指向存储在堆中的一个对象。复制结束以后，两个变量（指针）将引用同一个对象。互相影响。比如：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object();</div><div class="line">var obj2 = obj1;</div><div class="line">obj1.name = &apos;css&apos;;</div><div class="line">alert(obj2.name);    //&apos;css&apos;</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line">obj1.name = <span class="string">'css'</span>;</div><div class="line">alert(obj2.name);    <span class="comment">//'css'</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="https://i.loli.net/2017/09/06/59afb472d3739.png" alt="引用类型.png"></p>
 <h3 id="函数参数是按值传递的："><a href="#函数参数是按值传递的：" class="headerlink" title="函数参数是按值传递的："></a>函数参数是按值传递的：</h3><ol>
 <li><p>参数为基本类型时：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function addten(num)&#123;</div><div class="line">	num += 10;</div><div class="line">	return num;</div><div class="line">&#125;</div><div class="line">var count = 20;</div><div class="line">var result = addten(count);</div><div class="line">alert(count); //20</div><div class="line">alert(result);  //30</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addten</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">	num += <span class="number">10</span>;</div><div class="line">	<span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addten(count);</div><div class="line">alert(count); <span class="comment">//20</span></div><div class="line">alert(result);  <span class="comment">//30</span></div></pre></td></tr></table></figure>
 <p> 把count的值复制到num，对num的操作不会影响count。</p>
 </li>
 <li><p>参数为引用类型时：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function setName(obj)&#123;</div><div class="line">	obj.name = &apos;css&apos;;</div><div class="line">&#125;</div><div class="line">var person = new Object();</div><div class="line">setName(person);</div><div class="line">alert(person.name);    //&apos;css&apos;</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">	obj.name = <span class="string">'css'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setName(person);</div><div class="line">alert(person.name);    <span class="comment">//'css'</span></div></pre></td></tr></table></figure>
 <p> person变量被复制给了obj，person和obj引用的是同一个对象。所以说，即使函数参数是按值传递的，obj也会按引用来访问一个对象。所以内部更改obj外部会反映到外部的person。</p>
 <p> 在这里可能会有疑问,局部作用域的修改反映到全局作用域，不就是说明参数是按引用传递的吗？并不。如果在局部作用域中把一个新的对象赋值给obj重新修改name值，如果参数是按引用传递的，那么外部的person就会自动修改指向新的obj，但事实是即使修改了name值，原始的引用还是不变，name值还是不变。</p>
 </li>
 </ol>
 <h3 id="如何检测数据类型？"><a href="#如何检测数据类型？" class="headerlink" title="如何检测数据类型？"></a>如何检测数据类型？</h3><ol>
 <li><p>typeof操作符</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var s = &apos;css&apos;</div><div class="line">var n = null;</div><div class="line">var i = 12;</div><div class="line">var o = new Object();</div><div class="line"></div><div class="line">alert(typeof s);  //string</div><div class="line">alert(typeof n);  //object</div><div class="line">alert(typeof i);  //number</div><div class="line">alert(typeof o);  //object</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'css'</span></div><div class="line"><span class="keyword">var</span> n = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> i = <span class="number">12</span>;</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"></div><div class="line">alert(<span class="keyword">typeof</span> s);  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span> n);  <span class="comment">//object</span></div><div class="line">alert(<span class="keyword">typeof</span> i);  <span class="comment">//number</span></div><div class="line">alert(<span class="keyword">typeof</span> o);  <span class="comment">//object</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>instanceof操作符</p>
 <p> 但是通常我们在检测类型的时候，并不是只想知道他是object，所以就需要用instanceof操作符来检测（如果变量是给定引用类型的实例，就会返回true，根据原型链来识别）：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person instanceof Object);</div><div class="line">alert(colors instanceof Array);</div><div class="line">alert(pattern instanceof RegExp);</div></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</div><div class="line">alert(colors <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</div><div class="line">alert(pattern <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>);</div></pre></td></tr></table></figure>
 <p> 注意：inatanceof只能用于检测引用类型的值，因为基本类型不是对象，始终返回false；</p>
 </li>
 </ol>
@@ -452,6 +452,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/29/JavaScript那些事儿-二-作用域链/" rel="prev" title="JavaScript那些事儿(二)作用域链">
+                JavaScript那些事儿(二)作用域链 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +549,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -553,7 +557,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -562,7 +566,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
