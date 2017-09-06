@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/06/JavaScript那些事儿-三-面向对象程序设计/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
 <meta property="og:description" content="1. 最基础的方法：Object构造函数创建一个object实例： 123456var person = new Object();person.name = &apos;css&apos;;person.age = 21;person.getAge = function()&amp;#123;	alert(this.age);&amp;#125;; 2. 对象字面量12345678var name = &amp;#123;	name :">
-<meta property="og:updated_time" content="2017-09-06T14:45:55.000Z">
+<meta property="og:updated_time" content="2017-09-06T16:00:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript那些事儿(三)面向对象之创建对象">
 <meta name="twitter:description" content="1. 最基础的方法：Object构造函数创建一个object实例： 123456var person = new Object();person.name = &apos;css&apos;;person.age = 21;person.getAge = function()&amp;#123;	alert(this.age);&amp;#125;; 2. 对象字面量12345678var name = &amp;#123;	name :">
@@ -387,7 +387,9 @@
 <p>所以可以把sayAge函数移到全局作用域下，但是这样子自定义的引用类型就没有丝毫封装性可言了。这时候就引入了原型模式来解决。</p>
 <h3 id="5-原型模式"><a href="#5-原型模式" class="headerlink" title="5.原型模式"></a>5.原型模式</h3><p>我们创建的每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象（包含所有实例共享的属性和方法）。字面意思就是prototype属性就是通过调用构造函数而创建的那个对象实例的原型对象。它和构造函数模式的区别如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;;</div><div class="line">Person.prototype.name = <span class="string">'css'</span>;</div><div class="line">Person.prototype.age = <span class="number">21</span>;</div><div class="line">Person.prototype.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.getAge();    <span class="comment">//21</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">alert(person1.getAge == person2.getAge);   <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<p>构造函数——原型对象——实例 三者之间的关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">（三个指针指来指去）</div><div class="line"></div><div class="line">可以用***isPrototypeOf()***方法来检测实例和原型对象之间的关系：</div><div class="line"></div><div class="line">```js</div><div class="line">alert(Person.prototype.isPrototypeOf(person1)); //true</div></pre></td></tr></table></figure></p>
+<p>构造函数——原型对象——实例 三者之间的关系<br>prototype，constructor，<strong> proto </strong><br>（三个指针指来指去）</p>
+<p>可以用<strong><em>isPrototypeOf()</em></strong>方法来检测实例和原型对象之间的关系：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(Person.prototype.isPrototypeOf(person1)); <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <p>ES5新增的<strong><em>Object.getProtypeOf()</em></strong>方法会返回实例的原型对象；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">Object</span>.getPrototypeOf(person1) == Person.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <p>实例中创建原型的同名属性会覆盖原型中的属性，但是实例中创建的属性也可以用<strong><em>delete</em></strong>操作符来删除：</p>
@@ -445,6 +447,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/10/JavaScript那些事儿-四-原型链和继承/" rel="prev" title="JavaScript那些事儿(四)原型链和继承">
+                JavaScript那些事儿(四)原型链和继承 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -538,7 +544,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

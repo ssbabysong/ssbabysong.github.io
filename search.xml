@@ -4,6 +4,79 @@
   
     
     <entry>
+      <title><![CDATA[JavaScript那些事儿(四)原型链和继承]]></title>
+      <url>http://yoursite.com/2017/07/10/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E5%9B%9B-%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/</url>
+      <content type="html"><![CDATA[<p>ES实现继承主要是依靠原型链来实现。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。<br>通过让一个实例的原型等于另一个类型的实例，来使该实例的原型对象包含指向另一个原型的指针。</p>
+<h3 id="实现原型链"><a href="#实现原型链" class="headerlink" title="实现原型链"></a>实现原型链</h3><p>实现原型链的基本模式代码示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//继承了SuperType</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance.getSuperValue());    <span class="comment">//true;</span></div></pre></td></tr></table></figure>
+<p>实现的本质是重写对象。</p>
+<p>PS:别忘了，所有的引用类型都默认继承了Object。toString() valueOf()等</p>
+<h3 id="确定原型和实例的关系"><a href="#确定原型和实例的关系" class="headerlink" title="确定原型和实例的关系"></a>确定原型和实例的关系</h3><ol>
+<li><p>instanceof</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(instance <span class="keyword">instanceof</span> <span class="built_in">Object</span>);    <span class="comment">//true</span></div><div class="line">alert(instance <span class="keyword">instanceof</span> SuperType);   <span class="comment">//true</span></div><div class="line">alert(instance <span class="keyword">instanceof</span> SubType);    <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<p> 由于原型链的关系可以说instance是它们任意一个的实例</p>
+</li>
+<li><p>isPrototypeOf()</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">Object</span>.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div><div class="line">alert(SuperType.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div><div class="line">alert(SubType.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="谨慎的定义方法"><a href="#谨慎的定义方法" class="headerlink" title="谨慎的定义方法"></a>谨慎的定义方法</h3><p>在用原型链实现继承时，要注意，不能使用对象字面量创建原型方法，因为这样做会重写原型链。</p>
+<h3 id="原型链的问题"><a href="#原型链的问题" class="headerlink" title="原型链的问题"></a>原型链的问题</h3><ol>
+<li>和之前的原型模式创建对象一样，如果在原型中共享引用类型的话，会同步修改值。（push friends）</li>
+<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数。所以实际生产中很少单独使用原型链。</li>
+</ol>
+<h2 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h2><p>为了解决原型中引用类型值共享的问题，开发人员引入了借用构造函数的技术————在子类型的构造函数内部引用超类型构造函数。（用call和apply）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'blue'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//实现了继承</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</div><div class="line">instance1.colors.push(<span class="string">'yellow'</span>);</div><div class="line">alert(instance1.colors);       <span class="comment">// ['red','blue','yellow']</span></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance2.colors);   <span class="comment">// ['red','blue']</span></div></pre></td></tr></table></figure>
+<p>借用构造函数相比于原型链继承，也实现了在子类型中向超类型构造函数传参数。实例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//继承了SuperType 同时传递了name参数</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>,<span class="string">'css'</span>);</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>借用构造函数仍然存在构造函数的问题，那就是在构造函数中定义，函数复用便无从谈起。</p>
+<h2 id="组合继承（原型链-借用构造函数）最常用"><a href="#组合继承（原型链-借用构造函数）最常用" class="headerlink" title="组合继承（原型链+借用构造函数）最常用"></a>组合继承（原型链+借用构造函数）最常用</h2><p>实现思路：使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承。这样既能实现函数复用，也保证每个实例都有自己的属性。实例如下：</p>
+<pre><code class="js"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>{
+    <span class="keyword">this</span>.name = name;
+    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'blue'</span>];
+}
+SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    alert(<span class="keyword">this</span>.name);
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name,age</span>)</span>{
+    <span class="comment">//继承属性</span>
+    SuperType.call(<span class="keyword">this</span>,name);
+    <span class="keyword">this</span>.age = age;
+}
+<span class="comment">//继承方法</span>
+SubType.prototype = <span class="keyword">new</span> SuperType();
+
+SubType.prototype.constructor = SubType;
+SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    alert(<span class="keyword">this</span>.age);
+};
+
+<span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType(<span class="string">'css'</span>,<span class="number">21</span>);
+instance1.colors.push(<span class="string">'black'</span>);
+alert(instance1.colors);   <span class="comment">//['red','blue','black']</span>
+instance1.sayName();    <span class="comment">//'css'</span>
+instance1.sayAge();    <span class="comment">//21</span>
+</code></pre>
+<h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2>]]></content>
+      
+        <categories>
+            
+            <category> JavaScript那些事儿 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript那些事儿(三)面向对象之创建对象]]></title>
       <url>http://yoursite.com/2017/06/06/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E4%B8%89-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
       <content type="html"><![CDATA[<h3 id="1-最基础的方法：Object构造函数"><a href="#1-最基础的方法：Object构造函数" class="headerlink" title="1. 最基础的方法：Object构造函数"></a>1. 最基础的方法：Object构造函数</h3><p>创建一个object实例：</p>
@@ -29,7 +102,9 @@
 <p>所以可以把sayAge函数移到全局作用域下，但是这样子自定义的引用类型就没有丝毫封装性可言了。这时候就引入了原型模式来解决。</p>
 <h3 id="5-原型模式"><a href="#5-原型模式" class="headerlink" title="5.原型模式"></a>5.原型模式</h3><p>我们创建的每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象（包含所有实例共享的属性和方法）。字面意思就是prototype属性就是通过调用构造函数而创建的那个对象实例的原型对象。它和构造函数模式的区别如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;;</div><div class="line">Person.prototype.name = <span class="string">'css'</span>;</div><div class="line">Person.prototype.age = <span class="number">21</span>;</div><div class="line">Person.prototype.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.getAge();    <span class="comment">//21</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">alert(person1.getAge == person2.getAge);   <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<p>构造函数——原型对象——实例 三者之间的关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">（三个指针指来指去）</div><div class="line"></div><div class="line">可以用***isPrototypeOf()***方法来检测实例和原型对象之间的关系：</div><div class="line"></div><div class="line">```js</div><div class="line">alert(Person.prototype.isPrototypeOf(person1)); //true</div></pre></td></tr></table></figure></p>
+<p>构造函数——原型对象——实例 三者之间的关系<br>prototype，constructor，<strong> proto </strong><br>（三个指针指来指去）</p>
+<p>可以用<strong><em>isPrototypeOf()</em></strong>方法来检测实例和原型对象之间的关系：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(Person.prototype.isPrototypeOf(person1)); <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <p>ES5新增的<strong><em>Object.getProtypeOf()</em></strong>方法会返回实例的原型对象；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">Object</span>.getPrototypeOf(person1) == Person.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <p>实例中创建原型的同名属性会覆盖原型中的属性，但是实例中创建的属性也可以用<strong><em>delete</em></strong>操作符来删除：</p>
