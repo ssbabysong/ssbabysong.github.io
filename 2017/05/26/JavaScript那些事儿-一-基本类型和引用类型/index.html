@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Javascript," />
 
 
 
@@ -90,15 +90,19 @@
 
 
 
-<meta name="description" content="write less,do more">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog  | Chenss">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+<meta name="description" content="ES变量包含两种不同数据类型的值：基本类型值和引用类型值。 定义： 基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String. 引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript那些事儿(一)引用类型和基本类型">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
-<meta property="og:description" content="write less,do more">
+<meta property="og:description" content="ES变量包含两种不同数据类型的值：基本类型值和引用类型值。 定义： 基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String. 引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。">
+<meta property="og:image" content="https://i.loli.net/2017/09/06/59afb472d3739.png">
+<meta property="og:updated_time" content="2017-09-06T08:47:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog  | Chenss">
-<meta name="twitter:description" content="write less,do more">
+<meta name="twitter:title" content="JavaScript那些事儿(一)引用类型和基本类型">
+<meta name="twitter:description" content="ES变量包含两种不同数据类型的值：基本类型值和引用类型值。 定义： 基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String. 引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。">
+<meta name="twitter:image" content="https://i.loli.net/2017/09/06/59afb472d3739.png">
 
 
 
@@ -119,11 +123,11 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2016/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/"/>
 
       <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-  <title> 归档 | Blog  | Chenss </title>
+  <title> JavaScript那些事儿(一)引用类型和基本类型 | Blog  | Chenss </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -153,7 +157,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,221 +279,232 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 10 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/02/js学习笔记/" itemprop="url">
-              
-                <span itemprop="name">Javascript学习笔记</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-02T00:46:51+08:00"
-              content="2016-09-02" >
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/27/我为什么要用Node-js/" itemprop="url">
-              
-                <span itemprop="name">我为什么要用Node.js?</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-27T16:55:38+08:00"
-              content="2016-08-27" >
-          08-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/02/virtualenv的使用/" itemprop="url">
-              
-                <span itemprop="name">Virtualenv的使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-02T10:11:22+08:00"
-              content="2016-08-02" >
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/01/Git整理/" itemprop="url">
-              
-                <span itemprop="name">Git整理</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-01T16:44:38+08:00"
-              content="2016-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/01/git-push-u-origin-master-时出错/" itemprop="url">
-              
-                <span itemprop="name">git push -u origin master 时出错</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-01T10:24:42+08:00"
-              content="2016-08-01" >
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript那些事儿(一)引用类型和基本类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-26T13:45:33+08:00" content="2017-05-26">
+              2017-05-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Javascript那些事儿/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript那些事儿</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>ES变量包含两种不同数据类型的值：基本类型值和引用类型值。</p>
+<h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><ol>
+<li>基本数据类型：简单的数据段。Undefined、Null、Boolean、Number、String.</li>
+<li>引用数据类型：由多个值构成的对象。除过上面的几种基本数据类型外，剩下的就是引用类型了，统称为Object类型。细分的话，有：Object 类型、Array 类型、Date 类型、RegExp 类型、Function 类型 等。</li>
+</ol>
+<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ol>
+<li>基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值；</li>
+<li>引用类型的值是按引用访问的，值是保存在内存中的对象，JavaScript不允许直接访问内存中的位置，即不能直接操作对象的内存空间所以在操作对象时实际上实在操作对象的引用而不是实际的对象。</li>
+</ol>
+<h3 id="动态属性："><a href="#动态属性：" class="headerlink" title="动态属性："></a>动态属性：</h3><ol>
+<li><p>基本数据类型不能添加动态属性值。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var name = &apos;css&apos;;</div><div class="line">name.age = 21;      //不会报错</div><div class="line">alert(age.name);    //undefined</div></pre></td></tr></table></figure>
+</li>
+<li><p>引用类型的值可以添加删除动态属性和方法。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var person = new Object();</div><div class="line">person.name = &apos;css&apos;;</div><div class="line">alert(person.name);      //&apos;css&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="复制变量值："><a href="#复制变量值：" class="headerlink" title="复制变量值："></a>复制变量值：</h3><ol>
+<li><p>基本数据类型复制会在变量对象上创建一个新值，然后把该值放在新变量分配的位置上。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var num1 = 5;</div><div class="line">var num2 = num1;</div></pre></td></tr></table></figure>
+<p> 此后num1和num2各自的操作不会影响另一方。</p>
+</li>
+<li><p>引用类型的复制 同样也会把存储在变量对象中的值复制一份到为新变量分配的空间中。不同的是：<strong>这个值的副本实际上是一个指针</strong>，这个指针指向存储在堆中的一个对象。复制结束以后，两个变量（指针）将引用同一个对象。互相影响。比如：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj1 = new Object();</div><div class="line">var obj2 = obj1;</div><div class="line">obj1.name = &apos;css&apos;;</div><div class="line">alert(obj2.name);    //&apos;css&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2017/09/06/59afb472d3739.png" alt="引用类型.png"></p>
+<h3 id="函数参数是按值传递的："><a href="#函数参数是按值传递的：" class="headerlink" title="函数参数是按值传递的："></a>函数参数是按值传递的：</h3><ol>
+<li><p>参数为基本类型时：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function addten(num)&#123;</div><div class="line">	num += 10;</div><div class="line">	return num;</div><div class="line">&#125;</div><div class="line">var count = 20;</div><div class="line">var result = addten(count);</div><div class="line">alert(count); //20</div><div class="line">alert(result);  //30</div></pre></td></tr></table></figure>
+<p> 把count的值复制到num，对num的操作不会影响count。</p>
+</li>
+<li><p>参数为引用类型时：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function setName(obj)&#123;</div><div class="line">	obj.name = &apos;css&apos;;</div><div class="line">&#125;</div><div class="line">var person = new Object();</div><div class="line">setName(person);</div><div class="line">alert(person.name);    //&apos;css&apos;</div></pre></td></tr></table></figure>
+<p> person变量被复制给了obj，person和obj引用的是同一个对象。所以说，即使函数参数是按值传递的，obj也会按引用来访问一个对象。所以内部更改obj外部会反映到外部的person。</p>
+<p> 在这里可能会有疑问,局部作用域的修改反映到全局作用域，不就是说明参数是按引用传递的吗？并不。如果在局部作用域中把一个新的对象赋值给obj重新修改name值，如果参数是按引用传递的，那么外部的person就会自动修改指向新的obj，但事实是即使修改了name值，原始的引用还是不变，name值还是不变。</p>
+</li>
+</ol>
+<h3 id="如何检测数据类型？"><a href="#如何检测数据类型？" class="headerlink" title="如何检测数据类型？"></a>如何检测数据类型？</h3><ol>
+<li><p>typeof操作符</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var s = &apos;css&apos;</div><div class="line">var n = null;</div><div class="line">var i = 12;</div><div class="line">var o = new Object();</div><div class="line"></div><div class="line">alert(typeof s);  //string</div><div class="line">alert(typeof n);  //object</div><div class="line">alert(typeof i);  //number</div><div class="line">alert(typeof o);  //object</div></pre></td></tr></table></figure>
+</li>
+<li><p>instanceof操作符</p>
+<p> 但是通常我们在检测类型的时候，并不是只想知道他是object，所以就需要用instanceof操作符来检测（如果变量是给定引用类型的实例，就会返回true，根据原型链来识别）：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person instanceof Object);</div><div class="line">alert(colors instanceof Array);</div><div class="line">alert(pattern instanceof RegExp);</div></pre></td></tr></table></figure>
+<p> 注意：inatanceof只能用于检测引用类型的值，因为基本类型不是对象，始终返回false；</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/23/diary1/" rel="next" title="图集">
+                <i class="fa fa-chevron-left"></i> 图集
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/"
+     data-title="JavaScript那些事儿(一)引用类型和基本类型"
+     data-content=""
+     data-url="http://yoursite.com/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/"
+           data-title="JavaScript那些事儿(一)引用类型和基本类型" data-url="http://yoursite.com/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -509,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -580,6 +604,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义："><span class="nav-number">1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区别："><span class="nav-number">2.</span> <span class="nav-text">区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态属性："><span class="nav-number">3.</span> <span class="nav-text">动态属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制变量值："><span class="nav-number">4.</span> <span class="nav-text">复制变量值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数是按值传递的："><span class="nav-number">5.</span> <span class="nav-text">函数参数是按值传递的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何检测数据类型？"><span class="nav-number">6.</span> <span class="nav-text">如何检测数据类型？</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -683,11 +718,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
