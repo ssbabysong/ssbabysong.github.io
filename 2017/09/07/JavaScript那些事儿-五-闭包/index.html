@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="write less,do more">
-<meta property="og:type" content="website">
-<meta property="og:title" content="newpage">
-<meta property="og:url" content="http://yoursite.com/newpage/index.html">
+<meta name="description" content="闭包的定义指有权访问另一个函数作用域中的变量的函数。  这里先回顾一下作用域的概念。当函数被调用时，会创建一个执行环境（上下文）及对应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。 还要区分一下作用域链和活动对象两个概念：当一个函数执行完毕后，它的活动对象不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。换句话说，他的执行环境的作用域链会被销毁，但是它的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript那些事儿(五)闭包">
+<meta property="og:url" content="http://yoursite.com/2017/09/07/JavaScript那些事儿-五-闭包/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
-<meta property="og:description" content="write less,do more">
-<meta property="og:updated_time" content="2016-07-31T16:42:03.000Z">
+<meta property="og:description" content="闭包的定义指有权访问另一个函数作用域中的变量的函数。  这里先回顾一下作用域的概念。当函数被调用时，会创建一个执行环境（上下文）及对应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。 还要区分一下作用域链和活动对象两个概念：当一个函数执行完毕后，它的活动对象不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。换句话说，他的执行环境的作用域链会被销毁，但是它的">
+<meta property="og:updated_time" content="2017-09-11T14:49:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="newpage">
-<meta name="twitter:description" content="write less,do more">
+<meta name="twitter:title" content="JavaScript那些事儿(五)闭包">
+<meta name="twitter:description" content="闭包的定义指有权访问另一个函数作用域中的变量的函数。  这里先回顾一下作用域的概念。当函数被调用时，会创建一个执行环境（上下文）及对应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。 还要区分一下作用域链和活动对象两个概念：当一个函数执行完毕后，它的活动对象不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。换句话说，他的执行环境的作用域链会被销毁，但是它的">
 
 
 
@@ -120,17 +120,11 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/newpage/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/07/JavaScript那些事儿-五-闭包/"/>
 
       <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-  <title>
-  
-
-  
-    newpage | Blog  | Chenss
-  
-</title>
+  <title> JavaScript那些事儿(五)闭包 | Blog  | Chenss </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -160,7 +154,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,9 +278,148 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript那些事儿(五)闭包
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-07T01:08:29+08:00" content="2017-09-07">
+              2017-09-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/09/07/JavaScript那些事儿-五-闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/07/JavaScript那些事儿-五-闭包/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <h3 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h3><p>指有权访问另一个函数作用域中的变量的函数。</p>
+<blockquote>
+<p>这里先回顾一下作用域的概念。当函数被调用时，会创建一个<strong><em>执行环境</em></strong>（上下文）及对应的<strong><em>作用域链</em></strong>。然后，使用arguments和其他命名参数的值来初始化函数的<strong><em>活动对象</em></strong>。</p>
+<p>还要区分一下作用域链和活动对象两个概念：当一个函数执行完毕后，它的活动对象不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。换句话说，他的执行环境的作用域链会被销毁，但是它的活动对象仍然会留在内存中；可以通过null来销毁匿名函数，使活动对象被销毁。</p>
+</blockquote>
+<h3 id="闭包的弊端"><a href="#闭包的弊端" class="headerlink" title="闭包的弊端"></a>闭包的弊端</h3><p>由于闭包会携带包含它的函数的作用域，所以会比其他函数占用更多的内存。过度使用闭包可能会导致内存占用过多，要慎重使用。</p>
+<h3 id="闭包与变量"><a href="#闭包与变量" class="headerlink" title="闭包与变量"></a>闭包与变量</h3><p>作用域链的这种配置机制引出了一个值得注意的副作用：闭包只能取得包含函数中任何变量的最后一个值。下面举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">	<span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i ++ )&#123;</div><div class="line">		result[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> i;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> result;      <span class="comment">//返回十个10</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为每个函数的作用域链中都保存着createFunctions()函数的活动对象，所以它们引用的都是同一个变量i。</p>
+<p>我们可以通过创建另一个匿名函数强制让闭包的行为符合预期。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunctions</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line">	<span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i ++ )&#123;</div><div class="line">		result[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> num;</div><div class="line">			&#125;)(i);</div><div class="line">    &#125;</div><div class="line">	<span class="keyword">return</span> result;      <span class="comment">//[0,1,2,3,4,5,6,7,8,9]</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/25/JavaScript那些事儿-四-原型链和继承/" rel="next" title="JavaScript那些事儿(四)原型链和继承">
+                <i class="fa fa-chevron-left"></i> JavaScript那些事儿(四)原型链和继承
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/09/07/JavaScript那些事儿-五-闭包/"
+     data-title="JavaScript那些事儿(五)闭包"
+     data-content=""
+     data-url="http://yoursite.com/2017/09/07/JavaScript那些事儿-五-闭包/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
 
@@ -300,8 +433,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="newpage/index.html"
-           data-title="newpage" data-url="http://yoursite.com/newpage/index.html">
+      <div class="ds-thread" data-thread-key="2017/09/07/JavaScript那些事儿-五-闭包/"
+           data-title="JavaScript那些事儿(五)闭包" data-url="http://yoursite.com/2017/09/07/JavaScript那些事儿-五-闭包/">
       </div>
     
   </div>
@@ -325,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -396,6 +538,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的定义"><span class="nav-number">1.</span> <span class="nav-text">闭包的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的弊端"><span class="nav-number">2.</span> <span class="nav-text">闭包的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包与变量"><span class="nav-number">3.</span> <span class="nav-text">闭包与变量</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -499,6 +652,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
