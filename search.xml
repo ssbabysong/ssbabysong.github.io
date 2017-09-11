@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[JavaScript那些事儿(六)this]]></title>
-      <url>http://yoursite.com/2017/09/11/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E5%85%AD-this/</url>
+      <url>http://yoursite.com/2017/07/11/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E5%85%AD-this/</url>
       <content type="html"><![CDATA[<p>this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this=window，而当函数被作为某个对象的方法调用时，this就等于那个对象。</p>
 <p>不过！匿名函数的执行环境具有全局性，因此其this对象通常指向window。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'The window'</span>;</div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">	<span class="attr">name</span> :<span class="string">'my object'</span>,</div><div class="line">	<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">alert(object.getNameFunc()());       <span class="comment">//'The window'(在非严格模式下)</span></div></pre></td></tr></table></figure>
@@ -20,7 +20,7 @@
     
     <entry>
       <title><![CDATA[JavaScript那些事儿(五)闭包]]></title>
-      <url>http://yoursite.com/2017/09/07/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E4%BA%94-%E9%97%AD%E5%8C%85/</url>
+      <url>http://yoursite.com/2017/07/07/JavaScript%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E4%BA%94-%E9%97%AD%E5%8C%85/</url>
       <content type="html"><![CDATA[<h3 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h3><p>指有权访问另一个函数作用域中的变量的函数。</p>
 <blockquote>
 <p>这里先回顾一下作用域的概念。当函数被调用时，会创建一个<strong><em>执行环境</em></strong>（上下文）及对应的<strong><em>作用域链</em></strong>。然后，使用arguments和其他命名参数的值来初始化函数的<strong><em>活动对象</em></strong>。</p>

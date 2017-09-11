@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,16 @@
 
 
 
-<meta name="description" content="ES实现继承主要是依靠原型链来实现。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。通过让一个实例的原型等于另一个类型的实例，来使该实例的原型对象包含指向另一个原型的指针。 实现原型链实现原型链的基本模式代码示例如下： 123456789101112131415161718function SuperType()&amp;#123;	this.property = true;&amp;#1">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this=window，而当函数被作为某个对象的方法调用时，this就等于那个对象。 不过！匿名函数的执行环境具有全局性，因此其this对象通常指向window。 12345678910var name = &apos;The window&apos;;var object = &amp;#123;	name :&apos;my object&apos;,	getNameFunc :">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript那些事儿(四)原型链和继承">
-<meta property="og:url" content="http://yoursite.com/2017/06/25/JavaScript那些事儿-四-原型链和继承/index.html">
+<meta property="og:title" content="JavaScript那些事儿(六)this">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/JavaScript那些事儿-六-this/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
-<meta property="og:description" content="ES实现继承主要是依靠原型链来实现。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。通过让一个实例的原型等于另一个类型的实例，来使该实例的原型对象包含指向另一个原型的指针。 实现原型链实现原型链的基本模式代码示例如下： 123456789101112131415161718function SuperType()&amp;#123;	this.property = true;&amp;#1">
-<meta property="og:updated_time" content="2017-09-06T17:02:24.000Z">
+<meta property="og:description" content="this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this=window，而当函数被作为某个对象的方法调用时，this就等于那个对象。 不过！匿名函数的执行环境具有全局性，因此其this对象通常指向window。 12345678910var name = &apos;The window&apos;;var object = &amp;#123;	name :&apos;my object&apos;,	getNameFunc :">
+<meta property="og:updated_time" content="2017-09-11T16:00:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript那些事儿(四)原型链和继承">
-<meta name="twitter:description" content="ES实现继承主要是依靠原型链来实现。 原型链基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。通过让一个实例的原型等于另一个类型的实例，来使该实例的原型对象包含指向另一个原型的指针。 实现原型链实现原型链的基本模式代码示例如下： 123456789101112131415161718function SuperType()&amp;#123;	this.property = true;&amp;#1">
+<meta name="twitter:title" content="JavaScript那些事儿(六)this">
+<meta name="twitter:description" content="this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this=window，而当函数被作为某个对象的方法调用时，this就等于那个对象。 不过！匿名函数的执行环境具有全局性，因此其this对象通常指向window。 12345678910var name = &apos;The window&apos;;var object = &amp;#123;	name :&apos;my object&apos;,	getNameFunc :">
 
 
 
@@ -121,11 +120,11 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/25/JavaScript那些事儿-四-原型链和继承/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/11/JavaScript那些事儿-六-this/"/>
 
       <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-  <title> JavaScript那些事儿(四)原型链和继承 | Blog  | Chenss </title>
+  <title> JavaScript那些事儿(六)this | Blog  | Chenss </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -298,7 +297,7 @@
             
             
               
-                JavaScript那些事儿(四)原型链和继承
+                JavaScript那些事儿(六)this
               
             
           </h1>
@@ -310,38 +309,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-06-25T22:47:18+08:00" content="2017-06-25">
-              2017-06-25
+            <time itemprop="dateCreated" datetime="2017-07-11T22:50:52+08:00" content="2017-07-11">
+              2017-07-11
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript那些事儿/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript那些事儿</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/06/25/JavaScript那些事儿-四-原型链和继承/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/25/JavaScript那些事儿-四-原型链和继承/" itemprop="commentsCount"></span>
+                <a href="/2017/07/11/JavaScript那些事儿-六-this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/11/JavaScript那些事儿-六-this/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -364,60 +344,14 @@
       
 
       
-        <p>ES实现继承主要是依靠原型链来实现。</p>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。<br>通过让一个实例的原型等于另一个类型的实例，来使该实例的原型对象包含指向另一个原型的指针。</p>
-<h3 id="实现原型链"><a href="#实现原型链" class="headerlink" title="实现原型链"></a>实现原型链</h3><p>实现原型链的基本模式代码示例如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//继承了SuperType</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance.getSuperValue());    <span class="comment">//true;</span></div></pre></td></tr></table></figure>
-<p>实现的本质是重写对象。</p>
-<p>PS:别忘了，所有的引用类型都默认继承了Object。toString() valueOf()等</p>
-<h3 id="确定原型和实例的关系"><a href="#确定原型和实例的关系" class="headerlink" title="确定原型和实例的关系"></a>确定原型和实例的关系</h3><ol>
-<li><p>instanceof</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(instance <span class="keyword">instanceof</span> <span class="built_in">Object</span>);    <span class="comment">//true</span></div><div class="line">alert(instance <span class="keyword">instanceof</span> SuperType);   <span class="comment">//true</span></div><div class="line">alert(instance <span class="keyword">instanceof</span> SubType);    <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<p> 由于原型链的关系可以说instance是它们任意一个的实例</p>
-</li>
-<li><p>isPrototypeOf()</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">Object</span>.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div><div class="line">alert(SuperType.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div><div class="line">alert(SubType.prototype.isPrototypeOf(instance));  <span class="comment">//true</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="谨慎的定义方法"><a href="#谨慎的定义方法" class="headerlink" title="谨慎的定义方法"></a>谨慎的定义方法</h3><p>在用原型链实现继承时，要注意，不能使用对象字面量创建原型方法，因为这样做会重写原型链。</p>
-<h3 id="原型链的问题"><a href="#原型链的问题" class="headerlink" title="原型链的问题"></a>原型链的问题</h3><ol>
-<li>和之前的原型模式创建对象一样，如果在原型中共享引用类型的话，会同步修改值。（push friends）</li>
-<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数。所以实际生产中很少单独使用原型链。</li>
-</ol>
-<h2 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h2><p>为了解决原型中引用类型值共享的问题，开发人员引入了借用构造函数的技术————在子类型的构造函数内部引用超类型构造函数。（用call和apply）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'blue'</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//实现了继承</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</div><div class="line">instance1.colors.push(<span class="string">'yellow'</span>);</div><div class="line">alert(instance1.colors);       <span class="comment">// ['red','blue','yellow']</span></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance2.colors);   <span class="comment">// ['red','blue']</span></div></pre></td></tr></table></figure>
-<p>借用构造函数相比于原型链继承，也实现了在子类型中向超类型构造函数传参数。实例如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//继承了SuperType 同时传递了name参数</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>,<span class="string">'css'</span>);</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure>
-<p>借用构造函数仍然存在构造函数的问题，那就是在构造函数中定义，函数复用便无从谈起。</p>
-<h2 id="组合继承（原型链-借用构造函数）最常用"><a href="#组合继承（原型链-借用构造函数）最常用" class="headerlink" title="组合继承（原型链+借用构造函数）最常用"></a>组合继承（原型链+借用构造函数）最常用</h2><p>实现思路：使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承。这样既能实现函数复用，也保证每个实例都有自己的属性。实例如下：</p>
-<pre><code class="js"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>{
-    <span class="keyword">this</span>.name = name;
-    <span class="keyword">this</span>.colors = [<span class="string">'red'</span>,<span class="string">'blue'</span>];
-}
-SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    alert(<span class="keyword">this</span>.name);
-}
+        <p>this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this=window，而当函数被作为某个对象的方法调用时，this就等于那个对象。</p>
+<p>不过！匿名函数的执行环境具有全局性，因此其this对象通常指向window。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'The window'</span>;</div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">	<span class="attr">name</span> :<span class="string">'my object'</span>,</div><div class="line">	<span class="attr">getNameFunc</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">alert(object.getNameFunc()());       <span class="comment">//'The window'(在非严格模式下)</span></div></pre></td></tr></table></figure>
+<p>每个函数在被调用时都会自动取得两个特殊变量：this和arguments。内部函数在搜索这两个变量时，只会搜索到其活动对象为止，因此永远不可能直接访问外部函数中这两个变量。但是，可以通过<figure class="highlight plain"><figcaption><span>that = this 来访问外部函数的this```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```js</div><div class="line">var name = &apos;The window&apos;;</div><div class="line">var object = &#123;</div><div class="line">	name :&apos;my object&apos;,</div><div class="line">	getNameFunc : function()&#123;</div><div class="line">		var that = this;</div><div class="line">		return function()&#123;</div><div class="line">			return that.name;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">alert(object.getNameFunc()());       //&apos;my object&apos;</div></pre></td></tr></table></figure></p>
+<p>与上面不同的是，在定义匿名函数之前，我们把this对象赋值给了一个名叫that的变量。而在定义了闭包之后，闭包也可以访问这个变量，因为他是我们在包含函数中特意声明的一个变量。即使在函数返回之后，that也依然引用着object。</p>
+<p>在几种特殊情况下，this的值可能会意外的改变：<br>var name = ‘The window’;<br>var object = {<br>    name :’my object’,<br>    getName : function(){<br>        return that.name;<br>    }<br>};</p>
+<p>object.getName();        //‘my object’<br>(object.getName)();         //‘my object’<br><strong><em>虽然加上括号之后，就好像只是在引用一个函数，但this的值得到了维持。</em></strong><br>(object.getName = object.getName)();        //‘The window’</p>
 
-<span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name,age</span>)</span>{
-    <span class="comment">//继承属性</span>
-    SuperType.call(<span class="keyword">this</span>,name);
-    <span class="keyword">this</span>.age = age;
-}
-<span class="comment">//继承方法</span>
-SubType.prototype = <span class="keyword">new</span> SuperType();
-
-SubType.prototype.constructor = SubType;
-SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    alert(<span class="keyword">this</span>.age);
-};
-
-<span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType(<span class="string">'css'</span>,<span class="number">21</span>);
-instance1.colors.push(<span class="string">'black'</span>);
-alert(instance1.colors);   <span class="comment">//['red','blue','black']</span>
-instance1.sayName();    <span class="comment">//'css'</span>
-instance1.sayAge();    <span class="comment">//21</span>
-</code></pre>
-<h2 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h2>
       
     </div>
 
@@ -437,28 +371,18 @@ instance1.sayAge();    <span class="comment">//21</span>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/06/JavaScript那些事儿-三-面向对象程序设计/" rel="next" title="JavaScript那些事儿(三)面向对象之创建对象">
-                <i class="fa fa-chevron-left"></i> JavaScript那些事儿(三)面向对象之创建对象
+              <a href="/2017/07/07/JavaScript那些事儿-五-闭包/" rel="next" title="JavaScript那些事儿(五)闭包">
+                <i class="fa fa-chevron-left"></i> JavaScript那些事儿(五)闭包
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/07/JavaScript那些事儿-五-闭包/" rel="prev" title="JavaScript那些事儿(五)闭包">
-                JavaScript那些事儿(五)闭包 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,10 +397,10 @@ instance1.sayAge();    <span class="comment">//21</span>
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/06/25/JavaScript那些事儿-四-原型链和继承/"
-     data-title="JavaScript那些事儿(四)原型链和继承"
+        <div class="ds-share flat" data-thread-key="2017/07/11/JavaScript那些事儿-六-this/"
+     data-title="JavaScript那些事儿(六)this"
      data-content=""
-     data-url="http://yoursite.com/2017/06/25/JavaScript那些事儿-四-原型链和继承/">
+     data-url="http://yoursite.com/2017/07/11/JavaScript那些事儿-六-this/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -506,8 +430,8 @@ instance1.sayAge();    <span class="comment">//21</span>
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/06/25/JavaScript那些事儿-四-原型链和继承/"
-           data-title="JavaScript那些事儿(四)原型链和继承" data-url="http://yoursite.com/2017/06/25/JavaScript那些事儿-四-原型链和继承/">
+      <div class="ds-thread" data-thread-key="2017/07/11/JavaScript那些事儿-六-this/"
+           data-title="JavaScript那些事儿(六)this" data-url="http://yoursite.com/2017/07/11/JavaScript那些事儿-六-this/">
       </div>
     
   </div>
@@ -618,7 +542,7 @@ instance1.sayAge();    <span class="comment">//21</span>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">1.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现原型链"><span class="nav-number">1.1.</span> <span class="nav-text">实现原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确定原型和实例的关系"><span class="nav-number">1.2.</span> <span class="nav-text">确定原型和实例的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谨慎的定义方法"><span class="nav-number">1.3.</span> <span class="nav-text">谨慎的定义方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链的问题"><span class="nav-number">1.4.</span> <span class="nav-text">原型链的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借用构造函数"><span class="nav-number">2.</span> <span class="nav-text">借用构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合继承（原型链-借用构造函数）最常用"><span class="nav-number">3.</span> <span class="nav-text">组合继承（原型链+借用构造函数）最常用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型式继承"><span class="nav-number">4.</span> <span class="nav-text">原型式继承</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

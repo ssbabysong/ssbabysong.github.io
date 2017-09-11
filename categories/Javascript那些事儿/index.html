@@ -93,7 +93,7 @@
 <meta name="description" content="write less,do more">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog  | Chenss">
-<meta property="og:url" content="http://yoursite.com/categories/JavaScript那些事儿/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/Javascript那些事儿/index.html">
 <meta property="og:site_name" content="Blog  | Chenss">
 <meta property="og:description" content="write less,do more">
 <meta name="twitter:card" content="summary">
@@ -119,11 +119,11 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/JavaScript那些事儿/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/Javascript那些事儿/"/>
 
       <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-  <title> 分类: JavaScript那些事儿 | Blog  | Chenss </title>
+  <title> 分类: Javascript那些事儿 | Blog  | Chenss </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
   <section id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        JavaScript那些事儿
+        Javascript那些事儿
         <small>分类</small>
       </h2>
     </div>
@@ -291,37 +291,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/06/25/JavaScript那些事儿-四-原型链和继承/" itemprop="url">
+            <a class="post-title-link" href="/2017/05/26/JavaScript那些事儿-一-基本类型和引用类型/" itemprop="url">
               
-                <span itemprop="name">JavaScript那些事儿(四)原型链和继承</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-25T22:47:18+08:00"
-              content="2017-06-25" >
-          06-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/06/JavaScript那些事儿-三-面向对象程序设计/" itemprop="url">
-              
-                <span itemprop="name">JavaScript那些事儿(三)面向对象之创建对象</span>
+                <span itemprop="name">JavaScript那些事儿(一)引用类型和基本类型</span>
               
             </a>
         
@@ -329,37 +301,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-06T19:36:32+08:00"
-              content="2017-06-06" >
-          06-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/29/JavaScript那些事儿-二-作用域链/" itemprop="url">
-              
-                <span itemprop="name">JavaScript那些事儿(二)作用域链</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-29T12:51:56+08:00"
-              content="2017-05-29" >
-          05-29
+              datetime="2017-05-26T13:45:33+08:00"
+              content="2017-05-26" >
+          05-26
         </time>
       </div>
 
@@ -714,6 +658,63 @@
                 str += "</ul>";
                 if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
                 if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
+       if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
                 $resultContent.innerHTML = str;
             });
             proceedsearch();
